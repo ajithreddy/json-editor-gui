@@ -1,0 +1,85 @@
+@import tags._ 
+@main("JSON Test Suite"){
+<div id="contextMenuPopup">
+	<ul id="addToJSONStepsUl" class="addToJSONSpecialUl">
+		<li data-type="TEST_CONSTRUCT" class="addToJSONSteps">Add a TEST_CONSTRUCT block</li>
+		<li data-type="START_LOOP" class="addToJSONSteps">Add a START_LOOP block</li>
+		<li data-type="START_SESSION" class="addToJSONSteps">Add a START_SESSION block</li>
+	</ul>
+	<ul id="addSiblingToJSONStepUl" class="addToJSONSpecialUl">
+		<li data-type="TEST_CONSTRUCT" class="addSiblingToJSONStep" data-pos="BELOW">Add a TEST_CONSTRUCT block below</li>
+		<li data-type="TEST_CONSTRUCT" class="addSiblingToJSONStep" data-pos="ABOVE">Add a TEST_CONSTRUCT block above</li>
+		<li data-type="START_LOOP" class="addSiblingToJSONStep" data-pos="BELOW">Add a START_LOOP block below</li>
+		<li data-type="START_LOOP" class="addSiblingToJSONStep" data-pos="ABOVE">Add a START_LOOP block above</li>
+		<li data-type="START_SESSION" class="addSiblingToJSONStep" data-pos="BELOW">Add a START_SESSION block below</li>
+		<li data-type="START_SESSION" class="addSiblingToJSONStep" data-pos="ABOVE">Add a START_SESSION block above</li>
+	</ul>	
+	<ul id="addParamsToOutputUl" class="addToJSONSpecialUl">
+		<li data-type="OUTPUT_PARAMS" class="addToJSONSteps">Add a Params block</li>
+	</ul>		
+	<ul id="addCheckBlocksToParamsUl" class="addToJSONSpecialUl">
+		<li data-type="CHECK_EXACT" class="addToJSONSteps">Add a Check Exact block</li>
+		<li data-type="CHECK_PRESENT" class="addToJSONSteps">Add a Check Present block</li>
+	</ul>	
+	<ul id="addCheckBlocksAsSiblingsUl" class="addToJSONSpecialUl">
+		<li data-type="CHECK_EXACT" class="addSiblingToJSONStep" data-pos="BELOW">Add a Check Exact block below</li>
+		<li data-type="CHECK_EXACT" class="addSiblingToJSONStep" data-pos="ABOVE">Add a Check Exact block above</li>
+		<li data-type="CHECK_PRESENT" class="addSiblingToJSONStep" data-pos="BELOW">Add a Check Present block below</li>
+		<li data-type="CHECK_PRESENT" class="addSiblingToJSONStep" data-pos="ABOVE">Add a Check Present block above</li>
+	</ul>		
+	<ul id="addSomethingToJSONUl">
+		<li class="addSomethingToJSON" data-type="OBJECT">Add an Object</li>
+		<li class="addSomethingToJSON" data-type="ARRAY">Add an Array</li>
+		<li class="addSomethingToJSON" data-type="NORMAL">Add a Key Value
+			Pair</li>
+	</ul>
+</div>
+<ul id="autoSugggestionsPopup"></ul>
+<div id="jsonTestSuiteHead">Create json-ws-tests</div>
+<div id="mainContent">
+	<div id="leftSection">
+		<ul id="jsonTestsArea">
+		</ul>
+	</div>
+	<div id="jsonGenerationArea">
+		<div class="generateJSONButton">Generate JSON</div>
+		<div id="finalJSONArea"></div>
+	</div>
+</div>
+<ul id="jsonSamples" style="display: none;">
+	<li class="objLi" data-object-type="OBJECT">
+		<div class="jsonHead">
+			<span class="jsonObjKey jsonKey">Key</span><label class='keyValueSep'>:</label><span
+				class="jsonObjSymbol jsonObjOpenSymbol"></span>
+			@jsonOptions("OBJECT") 
+				<span class='jsonBlockCollapseEl'> <label>...</label>
+				<span class="jsonObjSymbol jsonObjCloseSymbol"></span> </span>
+		</div>
+		<ul class="jsonBody"></ul>
+		<div class="jsonTail">
+			<span class="jsonObjSymbol jsonObjCloseSymbol"></span>
+		</div>
+	</li>
+	<li class="arrayLi" data-object-type="ARRAY">
+		<div class="jsonHead">
+			<span class="jsonArrayKey jsonKey"></span><label class='keyValueSep'>:</label><span
+				class="jsonArraySymbol jsonArrayOpenSymbol"></span>
+			@jsonOptions("ARRAY") 
+			<span class='jsonBlockCollapseEl'> <label>...</label>
+				<span class="jsonArraySymbol jsonArrayCloseSymbol"></span> </span>
+		</div>
+		<ul class="jsonBody"></ul>
+		<div class="jsonTail">
+			<span class="jsonArraySymbol jsonArrayCloseSymbol"></span>
+		</div>
+	</li>
+	<li class="normalLi" data-object-type="NORMAL">
+		<div class="jsonHead">
+			<span class="jsonNormalKey jsonKey">Key</span><label
+				class='keyValueSep'>:</label><span class="jsonNormalValue">Value</span>
+			@jsonOptions("NORMAL")
+		</div>
+	</li>
+</ul>
+<script src="/assets/javascripts/main.js" type="text/javascript"></script>
+}
